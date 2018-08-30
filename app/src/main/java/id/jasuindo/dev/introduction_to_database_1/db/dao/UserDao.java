@@ -96,4 +96,17 @@ public class UserDao
         cursor.close();
         return record;
     }
+
+    public static UserPojo findByID(SQLiteOpenHelper helper, Integer id)
+    {
+        SQLiteDatabase db = helper.getReadableDatabase();
+        return findByID(db, id);
+    }
+
+    public static UserPojo findByID(SQLiteDatabase db, Integer id)
+    {
+        UserPojo record = null;
+        //Todo : Lengkapi Perintah ini
+        return record;
+    }
 }
