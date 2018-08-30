@@ -45,7 +45,7 @@ public class LoginActivity extends AppCompatActivity
             }
             else
             {
-                Toast.makeText(this, "Selamat Datang Client", Toast.LENGTH_SHORT).show();
+                super.startActivity(new Intent(this, ClientDashboardActivity.class));
             }
         }
         else
