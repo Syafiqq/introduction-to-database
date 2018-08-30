@@ -3,6 +3,8 @@ package id.jasuindo.dev.introduction_to_database_1.db;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import id.jasuindo.dev.introduction_to_database_1.db.dao.UserDao;
+import id.jasuindo.dev.introduction_to_database_1.db.pojo.UserPojo;
 
 /**
  * This introductiontodatabase1 project created by :
@@ -31,6 +33,7 @@ public class DBOpenHelper extends SQLiteOpenHelper
     @Override public void onCreate(SQLiteDatabase db)
     {
         db.execSQL(queryCreation);
+        UserDao.insert(db, new UserPojo(null, "admin", "admin", "admin@admin.com", "secret"));
     }
 
     @Override public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion)
