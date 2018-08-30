@@ -1,9 +1,9 @@
 package id.jasuindo.dev.introduction_to_database_1.controller;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.Toast;
 import id.jasuindo.dev.introduction_to_database_1.R;
 import id.jasuindo.dev.introduction_to_database_1.db.DBOpenHelper;
 
@@ -30,6 +30,6 @@ public class SplashScreenActivity extends AppCompatActivity
 
     private void gotoLogin(View v)
     {
-        Toast.makeText(this, "gotoLogin", Toast.LENGTH_SHORT).show();
+        super.startActivity(new Intent(this, LoginActivity.class));
     }
 }
