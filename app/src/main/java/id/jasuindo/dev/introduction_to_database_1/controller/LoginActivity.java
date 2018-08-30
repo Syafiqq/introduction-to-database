@@ -1,5 +1,6 @@
 package id.jasuindo.dev.introduction_to_database_1.controller;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -31,7 +32,7 @@ public class LoginActivity extends AppCompatActivity
         String passwordText = ((EditText) super.findViewById(R.id.l_password)).getText().toString();
         if(emailText.contentEquals("admin@admin.com") && passwordText.contentEquals("secret"))
         {
-            Toast.makeText(this, "Login Success", Toast.LENGTH_SHORT).show();
+            super.startActivity(new Intent(this, AdminDashboardActivity.class));
         }
         else
         {
