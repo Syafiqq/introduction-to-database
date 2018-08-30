@@ -13,7 +13,7 @@ import id.jasuindo.dev.introduction_to_database_1.db.pojo.UserPojo;
 
 public class LoginActivity extends AppCompatActivity
 {
-
+    public static final String USER_ID = "id.jasuindo.dev.introduction_to_database_1.controller.LoginActivity.user_id";
     private DBOpenHelper helper;
 
     @Override
@@ -41,11 +41,15 @@ public class LoginActivity extends AppCompatActivity
         {
             if(user.getRole().contentEquals("admin"))
             {
-                super.startActivity(new Intent(this, AdminDashboardActivity.class));
+                Intent message = new Intent(this, AdminDashboardActivity.class);
+                message.putExtra(LoginActivity.USER_ID, user.getId());
+                super.startActivity(message);
             }
             else
             {
-                super.startActivity(new Intent(this, ClientDashboardActivity.class));
+                Intent message = new Intent(this, ClientDashboardActivity.class);
+                message.putExtra(LoginActivity.USER_ID, user.getId());
+                super.startActivity(message);
             }
         }
         else
